@@ -1,3 +1,38 @@
+.light {
+    $background: #f8f8f8 !global;
+    background: red;
+
+
+    --white: #fff;
+    --gray-line: #DCDDE0;
+    --text: #666666;
+    --text-highlight: #B3B9FF;
+    --title: #2E384D;
+    --red: #E83F5B;
+    --green: #4CD62B;
+    --blue: #5965E0;
+    --blue-dark: #4953B8;
+    --blue-twitter: #2AA9E0;
+
+}
+
+.dark{
+    $background: #292929 !global;
+    //@at-root:lavenderblush;
+    //background: blue;
+
+    --white: rgb(29, 28, 28);
+    --gray-line: #ffffff;
+    --text: #ffffff;
+    --text-highlight: #636dd4;
+    --title: #00b63d;
+    --red: #e6052b;
+    --green: #32f302;
+    --blue: #0c1cd3;
+    --blue-dark: #0714a0;
+    --blue-twitter: #2c9ccc;
+}
+
 
 
 * {
@@ -7,9 +42,18 @@
 }
 
 body{
-    background: #f8f8f8;
+   // background: $background;
+    background:  white;
     color: #29292e;
-}
+} 
+
+body.dark-mode{
+    // background: $background;
+     background:  black;
+
+
+ } 
+
 
 body, input, button, textarea {
     font: 400 16px 'Roboto', sans-serif;

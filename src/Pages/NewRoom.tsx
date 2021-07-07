@@ -8,6 +8,7 @@ import { Button } from "../Components/Button"
 import { Link, useHistory } from "react-router-dom"
 import { useAuth } from "../Hooks/useAuth"
 import { database } from "../Services/Firebase";
+import { DarkModeToggleComponent } from "../Components/DarkModeToggle";
 
 export function NewRoom (){
     const {user} = useAuth()
@@ -26,6 +27,7 @@ export function NewRoom (){
         const firebaseRoom = await roomRef.push({
             title:newRoom,
             authId: user?.id,
+            userAvatar: user?.avatar,
         })
 
         history.push(`/admin/rooms/${firebaseRoom.key}/${user?.id}`)
@@ -41,6 +43,12 @@ export function NewRoom (){
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="logo" />
+{/*                     {!user?.avatar === undefined && (
+                        <> */}
+                            <img className="img-border" src={user?.avatar} alt="avatar" />
+                            <p className="title_name">Seja Bem Vindo ✨ {user?.name}</p>
+{/*                         </>
+                    )} */}
                     <h2>Criar uma nova sala</h2>
                     <form onSubmit={handleCreateRoom}>
                         <input 

@@ -9,8 +9,7 @@ import { useAuth } from "../Hooks/useAuth";
 import { FormEvent, useState } from "react";
 import { database } from "../Services/Firebase";
 import { useTheme } from "../Hooks/useTheme";
-
-
+import {DarkModeToggleComponent} from "../Components/DarkModeToggle";
 
 export function Home (){
 
@@ -53,6 +52,7 @@ export function Home (){
     return(
         <div id="page-auth" className={theme}>
             <aside>
+            <DarkModeToggleComponent  /* onClick={toggleTheme} onChange={toggleTheme}*//>
                 <img src={illustrationImg} alt="Ilustração simbolizando Perguntas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
                 <p>Tire as duvidas da sua audiência em tempo-real</p>
@@ -60,7 +60,6 @@ export function Home (){
             <main>
                 <div className="main-content">
                     <img src={logoImg} alt="logo" />
-                    <button onClick={toggleTheme}>Toogle Teste</button>
                     <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="Logo da Google" />
                         Crie sua sala com o Google
