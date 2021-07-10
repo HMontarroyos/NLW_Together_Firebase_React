@@ -6,16 +6,20 @@ import logoImg from '../Assets/images/logo.svg';
 import deleteImg from '../Assets/images/delete.svg';
 import checkImg from '../Assets/images/check.svg';
 import answerImg from '../Assets/images/answer.svg';
+import ConversationAnimation from "../Assets/loties/conversationLottie/ConversationAnimation"
+
+
 
 import { Button } from '../Components/Button';
 import { Question } from '../Components/Question/Index';
 import { RoomCode } from '../Components/RoomCode';
-// import { useAuth } from '../hooks/useAuth';
+
 import { useRoom } from '../Hooks/useRoom';
 import { database } from '../Services/Firebase';
 
 import '../Styles/Room.scss';
 import { useState } from 'react';
+import { DarkModeToggleComponent } from '../Components/DarkModeToggle';
 
 type RoomParams = {
   id: string;
@@ -26,7 +30,6 @@ export function AdminRoom() {
   // const { user } = useAuth();
   const history = useHistory()
   const params = useParams<RoomParams>();
-  console.log(`PARAMS`,params)
   const roomId = params.id;
 
   const [questionIdModalOpen, setQuestionIdModalOpen] = useState<string | undefined>();
@@ -70,12 +73,19 @@ export function AdminRoom() {
           </div>
         </div>
       </header>
-
+      <DarkModeToggleComponent/>
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>
           { questions.length > 0 && <span>{questions.length} pergunta(s)</span> }
         </div>
+        {questions.length === 0 && 
+          <div className="loties_question_zero">
+            <ConversationAnimation/>
+            <h1>Nenhuma pergunta por aqui ...</h1>
+            <p>Envie o código desta sala para seus amigos e comece a responder perguntas!</p>
+          </div>
+          }
 
         <div className="question-list">
           {questions.map(question => {
@@ -112,6 +122,7 @@ export function AdminRoom() {
                     <img src={deleteImg} alt="Remover pergunta" />
                   </button>
                 </Question>
+                <div className="">
                       <Modal 
                       isOpen={questionIdModalOpen === question.id}
                       onRequestClose={() => setQuestionIdModalOpen(undefined)}
@@ -120,6 +131,8 @@ export function AdminRoom() {
                         <button onClick={()=> handleDeleteQuestion(question.id)}>Deletar</button>
                         <button onClick={()=> setQuestionIdModalOpen(undefined)}>Fechar</button>
                     </Modal>
+
+                </div>
                   </Fragment>
             );
           })}

@@ -10,14 +10,13 @@ import firebase from "firebase";
 import {AuthContextProvider} from "./Contexts/AuthContext"
 import { Room } from "./Pages/Room";
 import { AdminRoom } from "./Pages/AdminRoom";
+import {Error} from "./Pages/Error"
 import {ThemeContextProvider} from "./Contexts/ThemeContext";
 
 
 
 
 function Routes() {
-
-
 
     return (
         <BrowserRouter>
@@ -28,6 +27,7 @@ function Routes() {
                             <Route path="/rooms/new" exact component={NewRoom} />
                             <Route path="/rooms/:id" exact component={Room} />
                             <Route path="/admin/rooms/:id/:authid" exact component={AdminRoom}/>
+                            <Route path="*" component={Error}/>
                             {/* <Route path="/admin/rooms/:id" component={AdminRoom}/>  */}
                         </Switch>
                     </AuthContextProvider>

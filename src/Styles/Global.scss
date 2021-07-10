@@ -1,60 +1,56 @@
-.light {
-    $background: #f8f8f8 !global;
-    background: red;
+.light-mode {
+    --background: #F2F3F5;
+    --aside-color: #835afd;
+    --aside-color-text: #29292e;
+    --paragraph-color: #737380;
+    --button-color-background: #835afd;
+    --button-color-text: #29292e;
+    --color-link-href: #e559f9;
+    --button-question: #e559f9;
+    --background-button-room: #aeaed9;
+    --paragraph-button-room: #ffff;
+    --color-background-button-google: #ea4335;
+    --color-button-google: #fff;
+    --icon-google-button: 
 
 
-    --white: #fff;
-    --gray-line: #DCDDE0;
-    --text: #666666;
-    --text-highlight: #B3B9FF;
-    --title: #2E384D;
-    --red: #E83F5B;
-    --green: #4CD62B;
-    --blue: #5965E0;
-    --blue-dark: #4953B8;
-    --blue-twitter: #2AA9E0;
 
 }
 
-.dark{
-    $background: #292929 !global;
-    //@at-root:lavenderblush;
-    //background: blue;
+.dark-mode {
+    --background: #4b4848;
+    --aside-color: #341575;
+    --aside-color-text: #f8f8f8;
+    --paragraph-color: #ebedef;
+    --button-color-background: #341575;
+    --button-color-text: #fff;
+    --color-link-href: #59f962;
+    --button-question: #8f329c;
+    --background-button-room: #f8f8f8;
+    --paragraph-button-room: #29292e;
+    --color-background-button-google: #fff;
+    --color-button-google: black;
+    --icon-google-button: 
 
-    --white: rgb(29, 28, 28);
-    --gray-line: #ffffff;
-    --text: #ffffff;
-    --text-highlight: #636dd4;
-    --title: #00b63d;
-    --red: #e6052b;
-    --green: #32f302;
-    --blue: #0c1cd3;
-    --blue-dark: #0714a0;
-    --blue-twitter: #2c9ccc;
+
 }
-
-
 
 * {
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-   // background: $background;
-    background:  white;
+body {
+    background: var(--background);
     color: #29292e;
-} 
-
-body.dark-mode{
-    // background: $background;
-     background:  black;
+}
 
 
- } 
 
-
-body, input, button, textarea {
+body,
+input,
+button,
+textarea {
     font: 400 16px 'Roboto', sans-serif;
 }

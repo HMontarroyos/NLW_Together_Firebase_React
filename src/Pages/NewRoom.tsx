@@ -10,6 +10,9 @@ import { useAuth } from "../Hooks/useAuth"
 import { database } from "../Services/Firebase";
 import { DarkModeToggleComponent } from "../Components/DarkModeToggle";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUsers } from '@fortawesome/free-solid-svg-icons'
+
 export function NewRoom (){
     const {user} = useAuth()
     const history = useHistory()
@@ -36,6 +39,7 @@ export function NewRoom (){
     return(
         <div id="page-auth">
             <aside>
+            <DarkModeToggleComponent/>
                 <img src={illustrationImg} alt="Ilustração simbolizando Perguntas" />
                 <strong>Crie salas de Q&amp;A ao-vivo</strong>
                 <p>Tire as duvidas da sua audiência em tempo-real</p>
@@ -57,7 +61,7 @@ export function NewRoom (){
                             onChange={event => setNewRoom(event.target.value)}
                             value={newRoom}
                         />
-                        <Button type="submit">Criar Sala</Button>
+                        <Button type="submit"> <FontAwesomeIcon className={"awesomeIcon"} icon={faUsers} />Criar Sala</Button>
                     </form>
                     <p>Quer entrar em uma sala existente ? <Link to="/">clique aqui</Link></p>
                 </div>

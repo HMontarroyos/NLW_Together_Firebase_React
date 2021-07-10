@@ -3,14 +3,14 @@
     border-radius: 8px;
     overflow: hidden;
     
-    background: #FFF;
-    border: 1px solid #835afd;
+    background:var(--background-button-room);
+    border: 1px solid var(--button-color-background);
     cursor: pointer;
     
     display: flex;
   
     div {
-      background: #835afd;
+      background:var(--aside-color);
       padding: 0 12px;
       display: flex;
       justify-content: center;
@@ -25,5 +25,7 @@
       width: 230px;
       font-size: 14px;
       font-weight: 500;
+      color: var(--paragraph-button-room);
     }
   }
+

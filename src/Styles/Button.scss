@@ -3,10 +3,9 @@
     height:50px;
     border-radius:8px;
     font-weight: 500;
-    background:#835afd;
-    color: #fff;
+    background:var(--button-color-background);
+    color:var(--button-color-text);
     padding: 0 32px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,9 +20,9 @@
     }
 
     &.outlined {
-        background: #FFF;
-        border: 1px solid #835afd;
-        color: #835afd;
+        background: var(--background-button-room);
+        border: 1px solid var(--button-color-background);
+        color: var(--paragraph-button-room);
     }
 
     &:not(:disabled):hover{

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import logoImg from '../Assets/images/logo.svg';
 
 import { Button } from '../Components/Button';
+import { DarkModeToggleComponent } from '../Components/DarkModeToggle';
 import { Question } from '../Components/Question/Index';
 import { RoomCode } from '../Components/RoomCode';
 import { useAuth } from '../Hooks/useAuth';
@@ -70,7 +71,7 @@ async function handleSendQuestion(event: FormEvent) {
           <RoomCode code={roomId} />
         </div>
       </header>
-
+      <DarkModeToggleComponent/>
       <main>
         <div className="room-title">
           <h1>Sala {title}</h1>
