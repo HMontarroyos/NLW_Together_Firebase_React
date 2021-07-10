@@ -16,6 +16,7 @@ import {DarkModeToggleComponent} from "../Components/DarkModeToggle";
 import {faDoorOpen } from '@fortawesome/free-solid-svg-icons' 
 
 
+
 export function Home (){
 
    const getTheme = sessionStorage.getItem("Theme");

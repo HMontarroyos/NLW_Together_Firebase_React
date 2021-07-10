@@ -1,0 +1,35 @@
+.btn{
+    width: 45%;
+    height:50px;
+    margin-left: 10px;
+    border: 0;
+    border-radius: .25em;
+    background: initial;
+    background-color: #7367f0;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: filter 0.2s;
+    font-weight: 500;
+
+    :hover{
+        filter: brightness(0.9);
+    }
+}
+
+
+    .btn-success{
+        background-color: rgb(48, 133, 214);
+        transition: box-shadow .1s;
+        box-shadow: 0 0 0 3px transparent;
+    }
+    
+
+
+    
+    .btn-danger{
+        background-color: rgb(221, 51, 51);
+
+    }
+
+
