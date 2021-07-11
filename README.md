@@ -35,4 +35,61 @@ Crie um Arquivo Chamado .env.local na sua pasta raiz do Projeto passando os par�
 `REACT_APP_MESSAGING_SENDER_ID=""`
 `REACT_APP_APP_ID=""`
 
+## DatRules do RealTimeDataBase Firebase
+
+Regras Necessárias que deve ser configurado em Rules no RealTimeDataBase.
+
+{
+"rules": {
+"rooms": {
+".read": false,
+".write": "auth != null",
+"$roomId": {
+".read": true,
+".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
+"questions": {
+".read": true,
+".write": "auth != null && (!data.exists() || data.parent().child('authorId').val() == auth.id)",
+"likes": {
+".read": true,
+".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)"
+}
+}
+}
+}
+}
+}
+
+## Efetuando Deploy com Firebase
+
+Caso Deseja Utilizar o Deploy do próprio Firebase aqui vai um resumo de como prosseguir através do próprio Firebase.
+
+### Instale a Firebase CLI
+
+`npm install -g firebase-tools`
+
+Inscreva-se para uma conta Firebase e crie um novo projeto.
+
+Execute
+
+`firebase login`
+
+e faça login com sua conta Firebase criada anteriormente.
+
+Para Inicializar o Projeto no Firebase execute
+
+`firebase init`
+
+Na pasta raiz do seu projeto.
+
+Você precisa escolher o Hosting: configurar e implantar sites do Firebase Hosting e escolher o projeto do Firebase que você criou na etapa anterior. Você precisará concordar em database.rules.json ser criado, escolher build como diretório público e também concordar em Configurar como um aplicativo de página única respondendo com y.
+
+Após finalizar tudo para implantá-lo execute
+
+`firebase deploy.`
+
+Para Ver o passo a passo só verificar o link abaixo que mostra cada detalhe da configuração do Deploy com o Firebase.
+
+[Como Realizar Deploy com Firebase no React](https://create-react-app.dev/docs/deployment/#firebase)
+
 ### 🚀 Let's code! 🚀
