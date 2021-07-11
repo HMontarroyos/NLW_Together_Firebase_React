@@ -10,15 +10,18 @@ export function DarkModeToggleComponent () {
 
     const handleChange = () => {
         setThemeState(!themeState);
-        setIsDarkMode(!isDarkMode);
         if (themeState) {
-            sessionStorage.setItem("Theme", "dark");
-            document.body.classList.add("dark-mode");
-            document.body.classList.remove("light-mode");
-        } else {
+            setIsDarkMode(false);
             sessionStorage.setItem("Theme", "light");
             document.body.classList.remove("dark-mode");
             document.body.classList.add("light-mode");
+            
+        } else {
+            setIsDarkMode(true); 
+            sessionStorage.setItem("Theme", "dark");
+            document.body.classList.add("dark-mode");
+            document.body.classList.remove("light-mode"); 
+            
         }
     };
     useEffect(() => {
@@ -31,8 +34,8 @@ export function DarkModeToggleComponent () {
     });
     return (
         <DarkModeToggle
-            onChange={handleChange}
             checked={isDarkMode}
+            onChange={handleChange}
             size={80}
             className={"DarkModeToggle"}
         />
