@@ -92,4 +92,6 @@ Para Ver o passo a passo só verificar o link abaixo que mostra cada detalhe da 
 
 [Como Realizar Deploy com Firebase no React](https://create-react-app.dev/docs/deployment/#firebase)
 
+![letmeask gif](https://user-images.githubusercontent.com/60220406/125380385-8147c380-e368-11eb-8141-0fccad7737bf.gif)
+
 ### 🚀 Let's code! 🚀
